@@ -1,4 +1,4 @@
-package com.educa62.respositorypattern;
+package com.educa62.repositorypattern.users;
 
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -6,60 +6,60 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.educa62.respositorypattern.model.Users;
+import com.educa62.repositorypattern.Injection;
+import com.educa62.repositorypattern.R;
+import com.educa62.repositorypattern.model.User;
 
-public class MainActivity extends AppCompatActivity implements MyContract.view {
+public class UsersActivity extends AppCompatActivity implements UsersContract.View {
 
-    private ProgressDialog progressDoalog;
+    private ProgressDialog progressDialog;
     private RecyclerView recyclerView;
-    private MyAdapter adapter;
-    private List<Users> data = new ArrayList<>();
+    private UsersAdapter adapter;
+    private List<User> data = new ArrayList<>();
 
-    private MyPresenter presenter = new MyPresenter(Injection.UsersInjection(), this);
-    private TextView txt;
+    private UsersPresenter presenter = new UsersPresenter(Injection.provideRepository(), this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        recyclerView = (RecyclerView) findViewById(R.id.rec);
+        setContentView(R.layout.users_activity);
+        recyclerView = findViewById(R.id.recyclerView);
         presenter.getDataListUsers();
         initAdapter();
     }
 
     @Override
     public void showProgress() {
-        progressDoalog = new ProgressDialog(MainActivity.this);
-        progressDoalog.setMessage("loading....");
-        progressDoalog.setTitle("Harap tunggu");
-        progressDoalog.show();
+        progressDialog = new ProgressDialog(UsersActivity.this);
+        progressDialog.setMessage("Loading....");
+        progressDialog.setTitle("Harap tunggu");
+        progressDialog.show();
     }
 
     @Override
     public void hideProgress() {
-        progressDoalog.dismiss();
+        progressDialog.dismiss();
     }
 
     @Override
-    public void showDataList(List<Users> data) {
+    public void showDataList(List<User> data) {
         this.data.addAll(data);
         adapter.notifyDataSetChanged();
     }
 
     @Override
-    public void failureMessage(String msg) {
+    public void showFailureMessage(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
 
     private void initAdapter() {
-        adapter = new MyAdapter(data);
+        adapter = new UsersAdapter(data);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

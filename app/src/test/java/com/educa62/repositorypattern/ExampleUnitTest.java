@@ -1,4 +1,4 @@
-package com.educa62.respositorypattern;
+package com.educa62.repositorypattern;
 
 import org.junit.Test;
 

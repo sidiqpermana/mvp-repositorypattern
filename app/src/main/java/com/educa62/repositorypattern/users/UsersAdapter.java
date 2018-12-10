@@ -1,4 +1,4 @@
-package com.educa62.respositorypattern;
+package com.educa62.repositorypattern.users;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -9,18 +9,19 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import com.educa62.respositorypattern.model.Users;
+import com.educa62.repositorypattern.R;
+import com.educa62.repositorypattern.model.User;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder> {
 
-    private List<Users> listData;
+    private List<User> listData;
 
 
     public interface onItemClickListener {
-        void onItemClick(Users users);
+        void onItemClick(User user);
     }
 
-    public MyAdapter(List<Users> listData) {
+    public UsersAdapter(List<User> listData) {
         this.listData = listData;
     }
 
@@ -33,7 +34,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        Users myModel = listData.get(i);
+        User myModel = listData.get(i);
         myViewHolder.bind(myModel);
     }
 
@@ -56,7 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         }
 
 
-        private void bind(final Users data) {
+        private void bind(final User data) {
             itemName.setText(data.name);
             itemUsername.setText(data.username);
             itemEmail.setText(data.email);

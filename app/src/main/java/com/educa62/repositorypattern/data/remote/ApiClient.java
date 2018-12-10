@@ -1,4 +1,4 @@
-package com.educa62.respositorypattern.network;
+package com.educa62.repositorypattern.data.remote;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

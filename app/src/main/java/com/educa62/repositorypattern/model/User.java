@@ -1,9 +1,9 @@
-package com.educa62.respositorypattern.model;
+package com.educa62.repositorypattern.model;
 
 import com.google.gson.annotations.SerializedName;
 
 
-public class Users {
+public class User {
     @SerializedName("company")
     public Company company;
     @SerializedName("website")
