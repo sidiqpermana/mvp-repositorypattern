@@ -1,6 +1,6 @@
-package com.educa62.repositorypattern.data.local;
+package com.educa62.repositorypattern.data.user.local;
 
-import com.educa62.repositorypattern.data.UserRepository;
+import com.educa62.repositorypattern.data.user.UserRepository;
 
 public class UserLocalRepository implements UserRepository {
 

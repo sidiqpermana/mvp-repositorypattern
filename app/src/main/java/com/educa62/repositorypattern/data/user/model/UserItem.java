@@ -3,7 +3,7 @@ package com.educa62.repositorypattern.data.user.model;
 import com.google.gson.annotations.SerializedName;
 
 
-public class User {
+public class UserItem {
     @SerializedName("company")
     public Company company;
     @SerializedName("website")
