@@ -10,7 +10,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UsersRemoteRepositories implements UserRepository {
+public class UserRemoteRepository implements UserRepository {
 
     private ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
 

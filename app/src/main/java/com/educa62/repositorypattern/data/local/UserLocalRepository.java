@@ -2,7 +2,7 @@ package com.educa62.repositorypattern.data.local;
 
 import com.educa62.repositorypattern.data.UserRepository;
 
-public class UsersLocalRepositories implements UserRepository {
+public class UserLocalRepository implements UserRepository {
 
 
     @Override
