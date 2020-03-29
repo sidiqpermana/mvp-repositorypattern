@@ -21,7 +21,7 @@ public class UsersActivity extends AppCompatActivity implements UsersContract.Vi
     private UsersAdapter adapter;
     private List<User> data = new ArrayList<>();
 
-    private UsersPresenter presenter = new UsersPresenter(this);
+    private UsersContract.Presenter presenter = new UsersPresenter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
