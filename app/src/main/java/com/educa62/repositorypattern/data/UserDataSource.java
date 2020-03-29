@@ -2,15 +2,15 @@ package com.educa62.repositorypattern.data;
 
 import java.util.List;
 
-import com.educa62.repositorypattern.data.local.UsersLocalDataSource;
-import com.educa62.repositorypattern.data.remote.UsersRemoteDataSource;
+import com.educa62.repositorypattern.data.local.UserLocalRepository;
+import com.educa62.repositorypattern.data.remote.UserRemoteRepository;
 import com.educa62.repositorypattern.model.User;
 
-public class UsersRepository implements UsersDataSource {
-    private UsersRemoteDataSource remoteDataSource;
-    private UsersLocalDataSource localDataSource;
+public class UserDataSource implements UserRepository {
+    private UserRemoteRepository remoteDataSource;
+    private UserLocalRepository localDataSource;
 
-    public UsersRepository(UsersRemoteDataSource remoteDataSource, UsersLocalDataSource localDataSource) {
+    public UserDataSource(UserRemoteRepository remoteDataSource, UserLocalRepository localDataSource) {
         this.remoteDataSource = remoteDataSource;
         this.localDataSource = localDataSource;
     }

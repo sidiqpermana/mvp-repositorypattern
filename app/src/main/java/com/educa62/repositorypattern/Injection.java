@@ -1,12 +1,13 @@
 package com.educa62.repositorypattern;
 
-import com.educa62.repositorypattern.data.UsersRepository;
-import com.educa62.repositorypattern.data.local.UsersLocalDataSource;
-import com.educa62.repositorypattern.data.remote.UsersRemoteDataSource;
+import com.educa62.repositorypattern.data.UserDataSource;
+import com.educa62.repositorypattern.data.UserRepository;
+import com.educa62.repositorypattern.data.local.UserLocalRepository;
+import com.educa62.repositorypattern.data.remote.UserRemoteRepository;
 
 public class Injection {
 
-    public static UsersRepository provideRepository() {
-        return new UsersRepository(new UsersRemoteDataSource(), new UsersLocalDataSource());
+    public static UserRepository provideRepository() {
+        return new UserDataSource(new UserRemoteRepository(), new UserLocalRepository());
     }
 }

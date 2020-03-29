@@ -3,14 +3,14 @@ package com.educa62.repositorypattern.data.remote;
 
 import java.util.List;
 
-import com.educa62.repositorypattern.data.UsersDataSource;
+import com.educa62.repositorypattern.data.UserRepository;
 import com.educa62.repositorypattern.model.User;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UsersRemoteDataSource implements UsersDataSource {
+public class UsersRemoteRepositories implements UserRepository {
 
     private ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
 

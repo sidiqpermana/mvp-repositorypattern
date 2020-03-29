@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.educa62.repositorypattern.model.User;
 
-public interface UsersDataSource {
+public interface UserRepository {
 
     void getListUsers(GetListUsersCallback callBack);
 

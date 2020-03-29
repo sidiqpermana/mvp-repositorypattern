@@ -1,8 +1,8 @@
 package com.educa62.repositorypattern.data.local;
 
-import com.educa62.repositorypattern.data.UsersDataSource;
+import com.educa62.repositorypattern.data.UserRepository;
 
-public class UsersLocalDataSource implements UsersDataSource {
+public class UsersLocalRepositories implements UserRepository {
 
 
     @Override
