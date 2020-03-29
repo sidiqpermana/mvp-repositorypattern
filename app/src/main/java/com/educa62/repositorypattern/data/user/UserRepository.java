@@ -1,8 +1,8 @@
-package com.educa62.repositorypattern.data;
+package com.educa62.repositorypattern.data.user;
 
 import java.util.List;
 
-import com.educa62.repositorypattern.model.User;
+import com.educa62.repositorypattern.data.user.model.UserItem;
 
 public interface UserRepository {
 
@@ -11,13 +11,13 @@ public interface UserRepository {
     void getUserDetail(int userId, GetUserDetailCallback callback);
 
     interface GetListUsersCallback {
-        void onSuccess(List<User> data);
+        void onSuccess(List<UserItem> data);
 
         void onFailed(String errorMessage);
     }
 
     interface GetUserDetailCallback {
-        void onSuccess(User data);
+        void onSuccess(UserItem data);
 
         void onFailed(String errorMessage);
     }

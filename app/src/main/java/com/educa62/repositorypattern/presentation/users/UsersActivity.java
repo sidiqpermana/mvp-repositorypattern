@@ -1,19 +1,18 @@
-package com.educa62.repositorypattern.users;
+package com.educa62.repositorypattern.presentation.users;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
+import com.educa62.repositorypattern.R;
+import com.educa62.repositorypattern.domain.user.model.User;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.educa62.repositorypattern.Injection;
-import com.educa62.repositorypattern.R;
-import com.educa62.repositorypattern.model.User;
 
 public class UsersActivity extends AppCompatActivity implements UsersContract.View {
 
@@ -22,7 +21,7 @@ public class UsersActivity extends AppCompatActivity implements UsersContract.Vi
     private UsersAdapter adapter;
     private List<User> data = new ArrayList<>();
 
-    private UsersPresenter presenter = new UsersPresenter(Injection.provideRepository(), this);
+    private UsersPresenter presenter = new UsersPresenter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

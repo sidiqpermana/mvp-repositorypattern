@@ -1,10 +1,10 @@
-package com.educa62.repositorypattern.data;
+package com.educa62.repositorypattern.data.user;
 
 import java.util.List;
 
-import com.educa62.repositorypattern.data.local.UserLocalRepository;
-import com.educa62.repositorypattern.data.remote.UserRemoteRepository;
-import com.educa62.repositorypattern.model.User;
+import com.educa62.repositorypattern.data.user.local.UserLocalRepository;
+import com.educa62.repositorypattern.data.user.model.UserItem;
+import com.educa62.repositorypattern.data.user.remote.UserRemoteRepository;
 
 public class UserDataSource implements UserRepository {
     private UserRemoteRepository remoteDataSource;
@@ -19,7 +19,7 @@ public class UserDataSource implements UserRepository {
     public void getListUsers(final GetListUsersCallback callback) {
         remoteDataSource.getListUsers(new GetListUsersCallback() {
             @Override
-            public void onSuccess(List<User> data) {
+            public void onSuccess(List<UserItem> data) {
                 callback.onSuccess(data);
             }
 
@@ -35,7 +35,7 @@ public class UserDataSource implements UserRepository {
     public void getUserDetail(int userId, final GetUserDetailCallback callback) {
         remoteDataSource.getUserDetail(userId, new GetUserDetailCallback() {
                     @Override
-                    public void onSuccess(User data) {
+                    public void onSuccess(UserItem data) {
                         callback.onSuccess(data);
                     }
 

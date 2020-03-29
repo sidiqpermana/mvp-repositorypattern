@@ -1,8 +1,8 @@
-package com.educa62.repositorypattern.users;
+package com.educa62.repositorypattern.presentation.users;
+
+import com.educa62.repositorypattern.domain.user.model.User;
 
 import java.util.List;
-
-import com.educa62.repositorypattern.model.User;
 
 public interface UsersContract {
 

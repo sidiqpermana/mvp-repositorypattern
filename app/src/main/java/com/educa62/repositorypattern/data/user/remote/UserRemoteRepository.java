@@ -4,6 +4,8 @@ package com.educa62.repositorypattern.data.remote;
 import java.util.List;
 
 import com.educa62.repositorypattern.data.UserRepository;
+import com.educa62.repositorypattern.data.lib.ApiClient;
+import com.educa62.repositorypattern.data.lib.ApiInterface;
 import com.educa62.repositorypattern.model.User;
 
 import retrofit2.Call;

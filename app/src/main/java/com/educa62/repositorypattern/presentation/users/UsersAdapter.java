@@ -1,4 +1,4 @@
-package com.educa62.repositorypattern.users;
+package com.educa62.repositorypattern.presentation.users;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,10 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.List;
-
 import com.educa62.repositorypattern.R;
-import com.educa62.repositorypattern.model.User;
+import com.educa62.repositorypattern.domain.user.model.User;
+
+import java.util.List;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder> {
 
@@ -18,7 +18,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
 
 
     public interface onItemClickListener {
-        void onItemClick(User user);
+        void onItemClick(User userItem);
     }
 
     public UsersAdapter(List<User> listData) {
@@ -58,11 +58,10 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
 
 
         private void bind(final User data) {
-            itemName.setText(data.name);
-            itemUsername.setText(data.username);
-            itemEmail.setText(data.email);
+            itemName.setText(data.getName());
+            itemUsername.setText(data.getUsername());
+            itemEmail.setText(data.getEmail());
         }
-
 
     }
 

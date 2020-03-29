@@ -1,4 +1,4 @@
-package com.educa62.repositorypattern.model;
+package com.educa62.repositorypattern.data.user.model;
 
 import com.google.gson.annotations.SerializedName;
 
